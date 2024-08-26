@@ -20,6 +20,7 @@ export interface SessionModel extends Document{
     tableNo : string,
     items : OderItem[],
     createdAt : Date,
+    waiterData : string,
     endSession : boolean,
 
 }
@@ -29,6 +30,10 @@ const SessionSchema : Schema <SessionModel> = new Schema({
     tableNo : {
         type : String,
         required : [true, 'table number is required']
+    },
+    waiterData : {
+        type : String,
+        required : [true, 'User Name is required']
     },
     items : [OderItemSchema],
     createdAt : {
